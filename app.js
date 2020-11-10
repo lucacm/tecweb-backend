@@ -1,5 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
+
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -7,7 +8,12 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-var app = express();
+const cors = require("cors");
+const app = express();
+app.use(cors());
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
